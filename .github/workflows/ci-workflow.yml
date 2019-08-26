@@ -16,7 +16,7 @@ jobs:
            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         with:
           entrypoint: digops-stacks
-          args: change-set test-change template.yml --environment test --customer test --purpose test --region us-east-1
+          args: change-set test-change template.yml --environment ${GITHUB_REF} --customer test --purpose test --region us-east-1
 
       - name: Apply Change Set
         uses: docker://meredithdigops/digops-stacks:0.19.1
@@ -25,4 +25,4 @@ jobs:
            AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         with:
           entrypoint: digops-stacks
-          args: execute test-change --environment test --region us-east-1
+          args: execute test-change --environment ${GITHUB_REF} --region us-east-1
