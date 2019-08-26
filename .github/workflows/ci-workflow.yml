@@ -7,5 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Deploy
-        uses: docker://meredithdigops/digops-stacks:0.19.1
-        run: /usr/local/bin/digops-stacks -h
+        run: ls
