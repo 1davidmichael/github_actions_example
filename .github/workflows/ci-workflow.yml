@@ -7,4 +7,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: docker://meredithdigops/digops-stacks:0.19.1
-      - run: digops-stacks -h
+      - run: /usr/local/bin/digops-stacks -h
