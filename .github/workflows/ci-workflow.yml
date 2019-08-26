@@ -1,9 +1,10 @@
 name: Deploy CloudFormation
-on: [push]
+on: ['push']
 
 jobs:
-  name: Test
-  runs-on: ubuntu-latest
-  steps:
-    - uses: docker://meredithdigops/digops-stacks@0.19.1
-    - run: digops-stacks -h
+  build:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: docker://meredithdigops/digops-stacks@0.19.1
+      - run: digops-stacks -h
