@@ -6,6 +6,9 @@ jobs:
     name: Test
     runs-on: ubuntu-latest
     steps:
+      - name: Checkout
+        uses: actions/checkout@v1
+
       - name: Deploy
         uses: docker://meredithdigops/digops-stacks:0.19.1
         with:
